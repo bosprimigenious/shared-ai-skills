@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chinese Handwritten Notes"
+  short_description: "Render authentic Chinese homework notes as a long PNG with real handwriting fonts."
+  default_prompt: "Use $zh-handwritten-notes to turn this answer text into one long handwritten notebook PNG. Use real CJK fonts, pale paper, single column. Keep final readable answers exact."
+policy:
+  allow_implicit_invocation: true

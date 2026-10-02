@@ -1,0 +1,6 @@
+interface:
+  display_name: "Mihomo 自动分流"
+  short_description: "经用户授权发现常用网站并持续选择响应最快且健康的代理节点"
+  default_prompt: "Use $mihomo-auto-routing to diagnose slow browsing, ask before aggregating recent history, and safely configure automatic per-site node selection."
+policy:
+  allow_implicit_invocation: true

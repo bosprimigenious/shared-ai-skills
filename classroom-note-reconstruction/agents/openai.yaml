@@ -1,0 +1,4 @@
+interface:
+  display_name: "课堂笔记还原与结构重建"
+  short_description: "还原口述课堂推进过程，默认给出只含框架的知识框架图，并写详细实录笔记"
+  default_prompt: "请用 $classroom-note-reconstruction 整理以下课堂转写：先给时间轴与知识框架图，各小节用本节问题串联，再按原推进顺序写详细笔记。"

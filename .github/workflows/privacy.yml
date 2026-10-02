@@ -1,0 +1,24 @@
+name: Public release privacy
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  privacy:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test privacy scanner
+        run: python3 -m unittest discover -s public-release-privacy/scripts -p 'test_*.py'
+      - name: Regenerate derived skill formats
+        run: |
+          ./_scripts/sync-formats.sh
+          git diff --exit-code
+      - name: Scan public tree
+        run: ./_scripts/privacy-scan.sh

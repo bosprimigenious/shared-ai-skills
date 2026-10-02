@@ -1,0 +1,39 @@
+services:
+  lane-codex:
+    image: ${TASK_IMAGE_DIGEST:?set TASK_IMAGE_DIGEST}
+    command: ["sleep", "infinity"]
+    network_mode: none
+    read_only: true
+    tmpfs: ["/tmp"]
+    volumes:
+      - ${PUBLIC_TASK_DIR:?set PUBLIC_TASK_DIR}:/task:ro
+      - ${CODEX_WORK_DIR:?set CODEX_WORK_DIR}:/workspace:rw
+
+  lane-second:
+    image: ${TASK_IMAGE_DIGEST:?set TASK_IMAGE_DIGEST}
+    command: ["sleep", "infinity"]
+    network_mode: none
+    read_only: true
+    tmpfs: ["/tmp"]
+    volumes:
+      - ${PUBLIC_TASK_DIR:?set PUBLIC_TASK_DIR}:/task:ro
+      - ${SECOND_WORK_DIR:?set SECOND_WORK_DIR}:/workspace:rw
+
+  trusted-evaluator:
+    image: ${EVALUATOR_IMAGE_DIGEST:?set EVALUATOR_IMAGE_DIGEST}
+    profiles: ["gpu"]
+    command: ["sleep", "infinity"]
+    network_mode: none
+    read_only: true
+    tmpfs: ["/tmp"]
+    volumes:
+      - ${PUBLIC_TASK_DIR:?set PUBLIC_TASK_DIR}:/task:ro
+      - ${HIDDEN_EVAL_DIR:?set HIDDEN_EVAL_DIR}:/trusted:ro
+      - ${RESULTS_DIR:?set RESULTS_DIR}:/results:rw
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

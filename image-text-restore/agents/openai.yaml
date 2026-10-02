@@ -1,0 +1,6 @@
+interface:
+  display_name: "Image Text Restore"
+  short_description: "Upscale images while preserving text and structure."
+  default_prompt: "Use $image-text-restore to make this image clearer at a larger resolution while preserving its composition, structure, and exact text."
+policy:
+  allow_implicit_invocation: true

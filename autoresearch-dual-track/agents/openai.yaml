@@ -1,0 +1,3 @@
+interface:
+  display_name: "AutoResearch 双轨 GPU"
+  short_description: "规划双 Agent GPU、Docker、恢复、成本与验收"

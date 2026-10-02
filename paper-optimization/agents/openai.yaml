@@ -1,0 +1,6 @@
+interface:
+  display_name: "论文优化与 GPU 实验"
+  short_description: "从论文调研、机制设计到 GPU 验证、轨迹留存与可复现交付的操作手册"
+  default_prompt: "使用 $paper-optimization 检查这篇论文与现有代码，确定可验证优化面，按预算完成实验并保留可复现证据。"
+policy:
+  allow_implicit_invocation: true

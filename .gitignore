@@ -1,0 +1,6 @@
+.DS_Store
+_inbox/
+_projects/
+mihomo-auto-routing-personal/
+__pycache__/
+*.py[cod]

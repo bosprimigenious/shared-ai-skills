@@ -1,0 +1,4 @@
+interface:
+  display_name: "Public Release Privacy"
+  short_description: "Fail-closed privacy audit for public repositories and bundles"
+  default_prompt: "Audit this release for privacy and secret risks without echoing matched values."

@@ -1,0 +1,23 @@
+{
+  "task_id": "replace-me",
+  "requires_gpu": true,
+  "metric": {"name": "replace-me", "direction": "minimize"},
+  "acceptance": {
+    "improvement_threshold": "replace-with-sourced-rule",
+    "randomness_protocol": "replace-with-seeds-or-deterministic-rule"
+  },
+  "agent_tracks": ["codex", "second-agent"],
+  "infrastructure": {
+    "development_runtime": "docker-compose-on-rented-gpu-host",
+    "target_harness": "harbor",
+    "target_backend": "replace-me",
+    "backend_gpu_support_evidence": "replace-with-current-version-source",
+    "persistent_snapshot": "replace-with-non-secret-location"
+  },
+  "cost": {
+    "hourly_price": null,
+    "daily_price": null,
+    "api_budget": null,
+    "stop_loss": null
+  }
+}

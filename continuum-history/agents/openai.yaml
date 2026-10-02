@@ -1,0 +1,6 @@
+interface:
+  display_name: "Continuum 对话历史"
+  short_description: "经用户授权，用 Continuum 显式导入并检索本机编码助手对话，迁移派生索引"
+  default_prompt: "Use $continuum-history to search imported conversation history or import an explicitly selected source. Ask before reading real Cursor/Claude/Codex logs. Never write vendor databases or auto-discover home directories."
+policy:
+  allow_implicit_invocation: true

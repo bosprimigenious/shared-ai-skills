@@ -1,0 +1,33 @@
+version: 1
+defaults:
+  interval: 600
+  tolerance: 30
+  lazy: true
+metadata_proxy_patterns:
+  - '^Traffic remaining'
+  - '^Expires'
+default_selector:
+  name: Proxy
+  choice: Auto
+rule_order:
+  - GitHub
+direct_rules:
+  - DOMAIN-SUFFIX,example.local,DIRECT
+groups:
+  - name: Auto
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    persist: filter
+  - name: GitHub
+    url: https://github.com/
+    interval: 300
+    persist: prepend
+    source_group: Auto
+    rules:
+      - DOMAIN-SUFFIX,github.com,GitHub
+      - DOMAIN-SUFFIX,githubusercontent.com,GitHub
+      - DOMAIN-SUFFIX,githubassets.com,GitHub
+      - DOMAIN-SUFFIX,ghcr.io,GitHub
+  - name: ChatGPT
+    url: https://chat.openai.com/cdn-cgi/trace
+    persist: filter
